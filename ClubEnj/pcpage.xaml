@@ -9,6 +9,25 @@
       Title="pcpage">
 
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Кол-во часов" Grid.Column="0" Grid.Row="0" FontSize="25" FontFamily="Arial" Foreground="White" TextAlignment="Center" VerticalAlignment="Center"/>
+        <TextBox x:Name="tb_amount" Grid.Column="1" Grid.Row="0" Margin="25,30,25,30"/>
+        <Button x:Name="btn_count" Content="посчитать" Grid.Column="1" Grid.ColumnSpan="1" Grid.Row="1" Click="btn_Ok_Click" Margin="25,25,25,29"/>
+        <Button x:Name="btn_choose" Content="выбрать" Grid.Column="3" Grid.ColumnSpan="1" Grid.Row="1" Click="btn_Ok_Click" Margin="25,25,25,29"/>
+        <TextBlock Text="Ночной тариф" Grid.Column="0" Grid.Row="2" FontSize="25" FontFamily="Arial" Foreground="White" VerticalAlignment="Center" TextAlignment="Center"/>
+        <Button x:Name="btn_nigch" Content="выбрать" Grid.Column="1" Grid.ColumnSpan="1" Grid.Row="2" Click="btn_Ok_Click" Margin="25,25,25,29"/>
+        <Button x:Name="btn_wrt" Content="записать" Grid.Column="3" Grid.ColumnSpan="1" Grid.Row="4" Click="btn_Ok_Click" Margin="25,25,25,29"/>
     </Grid>
 </Page>
