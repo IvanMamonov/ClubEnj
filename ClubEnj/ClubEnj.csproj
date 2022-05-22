@@ -79,6 +79,9 @@
     <Compile Include="pcpage.xaml.cs">
       <DependentUpon>pcpage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="pspage.xaml.cs">
+      <DependentUpon>pspage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="sysdiagrams.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -111,6 +114,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="pcpage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="pspage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

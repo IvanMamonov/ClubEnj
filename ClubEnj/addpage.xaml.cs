@@ -51,5 +51,10 @@ namespace ClubEnj
             i = a.id_type;
             
         }
+
+        private void tb_fi_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }

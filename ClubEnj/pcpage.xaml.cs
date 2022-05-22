@@ -24,5 +24,24 @@ namespace ClubEnj
         {
             InitializeComponent();
         }
+
+        private void btn_count_Click(object sender, RoutedEventArgs e)
+        {
+            
+            int s = 0;
+            int ch = 240;
+            s = Convert.ToInt32(tb_amount.Text) * ch;
+            prise.Content = s;
+        }
+
+        private void btn_choose_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btn_nigch_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
