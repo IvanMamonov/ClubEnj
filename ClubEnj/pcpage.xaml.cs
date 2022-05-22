@@ -16,14 +16,13 @@ using System.Windows.Shapes;
 namespace ClubEnj
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для pcpage.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class pcpage : Page
     {
-        public MainWindow()
+        public pcpage()
         {
             InitializeComponent();
-            frame_auto_reg.NavigationService.Navigate(new addpage());
         }
     }
 }
