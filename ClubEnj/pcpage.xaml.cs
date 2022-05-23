@@ -49,22 +49,28 @@ namespace ClubEnj
             bd_connection.connection.Prise.Add(b);
             bd_connection.connection.SaveChanges();
             NavigationService.Navigate(new addpage());
+            
         }
 
         private void btn_nigch_Click(object sender, RoutedEventArgs e)
         {
-            //var v = new Prise();
-            //v.prise1 = prise.Content.ToString();
-            //v.id_user = new_id_user;
-            //MessageBox.Show("Запись сделана");
-            //bd_connection.connection.Prise.Add(v);
-            //bd_connection.connection.SaveChanges();
-            //NavigationService.Navigate(new addpage());
+            var v = new Prise();
+            v.prise1 = prisenght.Text.ToString();
+            v.id_user = new_id_user;
+            MessageBox.Show("Запись сделана");
+            bd_connection.connection.Prise.Add(v);
+            bd_connection.connection.SaveChanges();
+            NavigationService.Navigate(new addpage());
         }
         
         private void tb_amount_TextChanged(object sender, TextChangedEventArgs e)
         {
             
+        }
+
+        private void btn_back_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.GoBack();
         }
     }
 }

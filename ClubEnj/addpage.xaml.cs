@@ -38,8 +38,19 @@ namespace ClubEnj
             a.id_type = i;
             bd_connection.connection.User.Add(a);
             bd_connection.connection.SaveChanges();
-            NavigationService.Navigate(new pcpage(a.id_user));
 
+            if (cb_gender.SelectedIndex == 0) 
+            {
+                NavigationService.Navigate(new pcpage(a.id_user));
+            }
+            else if (cb_gender.SelectedIndex == 1)
+            {
+                NavigationService.Navigate(new pspage(a.id_user));
+            }
+            else if (cb_gender.SelectedIndex == 2)
+            {
+                NavigationService.Navigate(new pspage(a.id_user));
+            }
         }
 
         public void cb_gender_SelectionChanged(object sender, SelectionChangedEventArgs e)

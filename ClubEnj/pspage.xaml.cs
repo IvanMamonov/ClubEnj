@@ -20,7 +20,7 @@ namespace ClubEnj
     /// </summary>
     public partial class pspage : Page
     {
-        public pspage()
+        public pspage(int _id_user)
         {
             InitializeComponent();
         }

@@ -31,6 +31,7 @@
         <Label x:Name="prise" Grid.Row="1" Grid.Column="1" FontSize="25" FontFamily="Arial" Foreground="White" VerticalAlignment="Center" Height="40" HorizontalAlignment="Center" Width="89"></Label>
         <TextBlock Text="Цена:" Grid.Column="1" Grid.Row="1" FontSize="25" FontFamily="Arial" Foreground="White" VerticalAlignment="Center" TextAlignment="Left" Margin="0,0,130,0"/>
         <TextBlock Text="Цена:" Grid.Column="1" Grid.Row="2" FontSize="25" FontFamily="Arial" Foreground="White" VerticalAlignment="Center" TextAlignment="Left"/>
-        <TextBlock Text="1520р" Grid.Column="1" Grid.Row="2" FontSize="25" FontFamily="Arial" Foreground="White" VerticalAlignment="Center" TextAlignment="Center"/>
+        <TextBlock x:Name="prisenght" Text="1520р" Grid.Column="1" Grid.Row="2" FontSize="25" FontFamily="Arial" Foreground="White" VerticalAlignment="Center" TextAlignment="Center"/>
+        <Button x:Name="btn_back" Content="выfdpogjifdь" Grid.Column="3" Grid.ColumnSpan="1" Grid.Row="2" Click="btn_back_Click" Margin="25,25,25,29"/>
     </Grid>
 </Page>

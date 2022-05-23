@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace ClubEnj
 {
-    internal class bd_connection
+    public static class globalper
     {
-        public static clubpcEntities3 connection = new clubpcEntities3();
+        public static User GlobUser { get; set; }
     }
 }
