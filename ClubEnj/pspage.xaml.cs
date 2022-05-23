@@ -24,5 +24,30 @@ namespace ClubEnj
         {
             InitializeComponent();
         }
+
+        private void cb_ps_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void btn_cnt_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btn_nghtcnt_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void tb_amoun_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void btn_dcnt_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

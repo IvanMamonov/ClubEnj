@@ -13,10 +13,10 @@ namespace ClubEnj
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class clubpcEntities1 : DbContext
+    public partial class clubpcEntities2 : DbContext
     {
-        public clubpcEntities1()
-            : base("name=clubpcEntities1")
+        public clubpcEntities2()
+            : base("name=clubpcEntities2")
         {
         }
     
@@ -27,10 +27,10 @@ namespace ClubEnj
     
         public virtual DbSet<Config> Config { get; set; }
         public virtual DbSet<Item> Item { get; set; }
+        public virtual DbSet<Prise> Prise { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Table> Table { get; set; }
         public virtual DbSet<Type> Type { get; set; }
         public virtual DbSet<User> User { get; set; }
-        public virtual DbSet<Prise> Prise { get; set; }
     }
 }

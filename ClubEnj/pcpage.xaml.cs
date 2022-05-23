@@ -21,11 +21,14 @@ namespace ClubEnj
     /// </summary>
     public partial class pcpage : Page
     {
+        private readonly int? new_id_user;
+
         public static ObservableCollection<Prise> prises { get; set; }
         int y { get; set; }
-        public pcpage()
+        public pcpage(int _id_user)
         {
             InitializeComponent();
+            new_id_user = _id_user;
         }
 
         private void btn_count_Click(object sender, RoutedEventArgs e)
@@ -40,17 +43,28 @@ namespace ClubEnj
         private void btn_choose_Click(object sender, RoutedEventArgs e)
         {
             var b = new Prise();
-            //b.id_prise = ;
+            b.prise1 = prise.Content.ToString();
+            b.id_user = new_id_user;
+            MessageBox.Show("Запись сделана");
+            bd_connection.connection.Prise.Add(b);
+            bd_connection.connection.SaveChanges();
+            NavigationService.Navigate(new addpage());
         }
 
         private void btn_nigch_Click(object sender, RoutedEventArgs e)
         {
-
+            //var v = new Prise();
+            //v.prise1 = prise.Content.ToString();
+            //v.id_user = new_id_user;
+            //MessageBox.Show("Запись сделана");
+            //bd_connection.connection.Prise.Add(v);
+            //bd_connection.connection.SaveChanges();
+            //NavigationService.Navigate(new addpage());
         }
-
-        private void prise_DataContextChanged(object sender, DependencyPropertyChangedEventArgs e)
+        
+        private void tb_amount_TextChanged(object sender, TextChangedEventArgs e)
         {
-
+            
         }
     }
 }

@@ -17,6 +17,7 @@ namespace ClubEnj
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public User()
         {
+            this.Prise = new HashSet<Prise>();
             this.Table = new HashSet<Table>();
         }
     
@@ -24,11 +25,11 @@ namespace ClubEnj
         public string FullName { get; set; }
         public string Number { get; set; }
         public Nullable<int> id_type { get; set; }
-        public Nullable<int> id_prise { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Prise> Prise { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Table> Table { get; set; }
         public virtual Type Type { get; set; }
-        public virtual Prise Prise { get; set; }
     }
 }

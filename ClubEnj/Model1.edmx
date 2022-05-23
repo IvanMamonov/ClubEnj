@@ -23,7 +23,7 @@
           <Key>
             <PropertyRef Name="id_prise" />
           </Key>
-          <Property Name="id_prise" Type="int" Nullable="false" />
+          <Property Name="id_prise" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="prise" Type="varchar" MaxLength="50" />
           <Property Name="id_user" Type="int" />
         </EntityType>
@@ -62,8 +62,19 @@
           <Property Name="FullName" Type="varchar" MaxLength="50" />
           <Property Name="Number" Type="varchar" MaxLength="50" />
           <Property Name="id_type" Type="int" />
-          <Property Name="id_prise" Type="int" />
         </EntityType>
+        <Association Name="FK_Prise_User">
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="Prise" Type="Self.Prise" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="id_user" />
+            </Principal>
+            <Dependent Role="Prise">
+              <PropertyRef Name="id_user" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Table_Config">
           <End Role="Config" Type="Self.Config" Multiplicity="0..1" />
           <End Role="Table" Type="Self.Table" Multiplicity="*" />
@@ -100,18 +111,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_User_Prise">
-          <End Role="Prise" Type="Self.Prise" Multiplicity="0..1" />
-          <End Role="User" Type="Self.User" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Prise">
-              <PropertyRef Name="id_prise" />
-            </Principal>
-            <Dependent Role="User">
-              <PropertyRef Name="id_prise" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_User_Type">
           <End Role="Type" Type="Self.Type" Multiplicity="0..1" />
           <End Role="User" Type="Self.User" Multiplicity="*" />
@@ -132,6 +131,10 @@
           <EntitySet Name="Table" EntityType="Self.Table" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Type" EntityType="Self.Type" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Prise_User" Association="Self.FK_Prise_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="Prise" EntitySet="Prise" />
+          </AssociationSet>
           <AssociationSet Name="FK_Table_Config" Association="Self.FK_Table_Config">
             <End Role="Config" EntitySet="Config" />
             <End Role="Table" EntitySet="Table" />
@@ -143,10 +146,6 @@
           <AssociationSet Name="FK_Table_User" Association="Self.FK_Table_User">
             <End Role="User" EntitySet="User" />
             <End Role="Table" EntitySet="Table" />
-          </AssociationSet>
-          <AssociationSet Name="FK_User_Prise" Association="Self.FK_User_Prise">
-            <End Role="Prise" EntitySet="Prise" />
-            <End Role="User" EntitySet="User" />
           </AssociationSet>
           <AssociationSet Name="FK_User_Type" Association="Self.FK_User_Type">
             <End Role="Type" EntitySet="Type" />
@@ -172,6 +171,15 @@
           <Property Name="id_item" Type="Int32" Nullable="false" />
           <Property Name="item_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Table" Relationship="Self.FK_Table_Item" FromRole="Item" ToRole="Table" />
+        </EntityType>
+        <EntityType Name="Prise">
+          <Key>
+            <PropertyRef Name="id_prise" />
+          </Key>
+          <Property Name="id_prise" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="prise1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="id_user" Type="Int32" />
+          <NavigationProperty Name="User" Relationship="Self.FK_Prise_User" FromRole="Prise" ToRole="User" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -212,10 +220,9 @@
           <Property Name="FullName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Number" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="id_type" Type="Int32" />
+          <NavigationProperty Name="Prise" Relationship="Self.FK_Prise_User" FromRole="User" ToRole="Prise" />
           <NavigationProperty Name="Table" Relationship="Self.FK_Table_User" FromRole="User" ToRole="Table" />
           <NavigationProperty Name="Type" Relationship="Self.FK_User_Type" FromRole="User" ToRole="Type" />
-          <Property Name="id_prise" Type="Int32" />
-          <NavigationProperty Name="Prise" Relationship="clubpcModel.FK_User_Prise" FromRole="User" ToRole="Prise" />
         </EntityType>
         <Association Name="FK_Table_Config">
           <End Role="Config" Type="Self.Config" Multiplicity="0..1" />
@@ -238,6 +245,18 @@
             </Principal>
             <Dependent Role="Table">
               <PropertyRef Name="id_item" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Prise_User">
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="Prise" Type="Self.Prise" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="id_user" />
+            </Principal>
+            <Dependent Role="Prise">
+              <PropertyRef Name="id_user" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -265,9 +284,10 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="clubpcEntities1" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="clubpcEntities2" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Config" EntityType="Self.Config" />
           <EntitySet Name="Item" EntityType="Self.Item" />
+          <EntitySet Name="Prise" EntityType="Self.Prise" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
           <EntitySet Name="Table" EntityType="Self.Table" />
           <EntitySet Name="Type" EntityType="Self.Type" />
@@ -280,6 +300,10 @@
             <End Role="Item" EntitySet="Item" />
             <End Role="Table" EntitySet="Table" />
           </AssociationSet>
+          <AssociationSet Name="FK_Prise_User" Association="Self.FK_Prise_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="Prise" EntitySet="Prise" />
+          </AssociationSet>
           <AssociationSet Name="FK_Table_User" Association="Self.FK_Table_User">
             <End Role="User" EntitySet="User" />
             <End Role="Table" EntitySet="Table" />
@@ -288,39 +312,13 @@
             <End Role="Type" EntitySet="Type" />
             <End Role="User" EntitySet="User" />
           </AssociationSet>
-          <EntitySet Name="Prise" EntityType="clubpcModel.Prise" />
-          <AssociationSet Name="FK_User_Prise" Association="clubpcModel.FK_User_Prise">
-            <End Role="Prise" EntitySet="Prise" />
-            <End Role="User" EntitySet="User" />
-          </AssociationSet>
         </EntityContainer>
-        <EntityType Name="Prise">
-          <Key>
-            <PropertyRef Name="id_prise" />
-          </Key>
-          <Property Name="id_prise" Type="Int32" Nullable="false" />
-          <Property Name="prise1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="id_user" Type="Int32" />
-          <NavigationProperty Name="User" Relationship="clubpcModel.FK_User_Prise" FromRole="Prise" ToRole="User" />
-        </EntityType>
-        <Association Name="FK_User_Prise">
-          <End Type="clubpcModel.Prise" Role="Prise" Multiplicity="0..1" />
-          <End Type="clubpcModel.User" Role="User" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Prise">
-              <PropertyRef Name="id_prise" />
-            </Principal>
-            <Dependent Role="User">
-              <PropertyRef Name="id_prise" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Хранилище clubpcModelContainer" CdmEntityContainer="clubpcEntities1">
+        <EntityContainerMapping StorageEntityContainer="Хранилище clubpcModelContainer" CdmEntityContainer="clubpcEntities2">
           <EntitySetMapping Name="Config">
             <EntityTypeMapping TypeName="clubpcModel.Config">
               <MappingFragment StoreEntitySet="Config">
@@ -334,6 +332,15 @@
               <MappingFragment StoreEntitySet="Item">
                 <ScalarProperty Name="id_item" ColumnName="id_item" />
                 <ScalarProperty Name="item_name" ColumnName="item_name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Prise">
+            <EntityTypeMapping TypeName="clubpcModel.Prise">
+              <MappingFragment StoreEntitySet="Prise">
+                <ScalarProperty Name="id_prise" ColumnName="id_prise" />
+                <ScalarProperty Name="prise1" ColumnName="prise" />
+                <ScalarProperty Name="id_user" ColumnName="id_user" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -370,20 +377,10 @@
           <EntitySetMapping Name="User">
             <EntityTypeMapping TypeName="clubpcModel.User">
               <MappingFragment StoreEntitySet="User">
-                <ScalarProperty Name="id_prise" ColumnName="id_prise" />
                 <ScalarProperty Name="id_user" ColumnName="id_user" />
                 <ScalarProperty Name="FullName" ColumnName="FullName" />
                 <ScalarProperty Name="Number" ColumnName="Number" />
                 <ScalarProperty Name="id_type" ColumnName="id_type" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Prise">
-            <EntityTypeMapping TypeName="clubpcModel.Prise">
-              <MappingFragment StoreEntitySet="Prise">
-                <ScalarProperty Name="id_user" ColumnName="id_user" />
-                <ScalarProperty Name="prise1" ColumnName="prise" />
-                <ScalarProperty Name="id_prise" ColumnName="id_prise" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

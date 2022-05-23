@@ -28,7 +28,7 @@
         <Button x:Name="btn_choose" Content="выбрать" Grid.Column="2" Grid.ColumnSpan="1" Grid.Row="1" Click="btn_choose_Click" Margin="25,25,25,29"/>
         <TextBlock Text="Ночной тариф" Grid.Column="0" Grid.Row="2" FontSize="25" FontFamily="Arial" Foreground="White" VerticalAlignment="Center" TextAlignment="Center"/>
         <Button x:Name="btn_nigch" Content="выбрать" Grid.Column="2" Grid.ColumnSpan="1" Grid.Row="2" Click="btn_nigch_Click" Margin="25,25,25,29"/>
-        <Label Grid.Row="1" Grid.Column="1" x:Name="prise" FontSize="25" FontFamily="Arial" Foreground="White" VerticalAlignment="Center" Height="40" HorizontalAlignment="Center" Width="89"></Label>
+        <Label x:Name="prise" Grid.Row="1" Grid.Column="1" FontSize="25" FontFamily="Arial" Foreground="White" VerticalAlignment="Center" Height="40" HorizontalAlignment="Center" Width="89"></Label>
         <TextBlock Text="Цена:" Grid.Column="1" Grid.Row="1" FontSize="25" FontFamily="Arial" Foreground="White" VerticalAlignment="Center" TextAlignment="Left" Margin="0,0,130,0"/>
         <TextBlock Text="Цена:" Grid.Column="1" Grid.Row="2" FontSize="25" FontFamily="Arial" Foreground="White" VerticalAlignment="Center" TextAlignment="Left"/>
         <TextBlock Text="1520р" Grid.Column="1" Grid.Row="2" FontSize="25" FontFamily="Arial" Foreground="White" VerticalAlignment="Center" TextAlignment="Center"/>

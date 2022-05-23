@@ -29,8 +29,8 @@
         <TextBox x:Name="tb_fi" Grid.Column="1" Grid.Row="0" TextChanged="tb_fi_TextChanged"/>
         <TextBox x:Name="tb_number" Grid.Column="1" Grid.Row="1" TextChanged="tb_number_TextChanged"/>
 
-        <TextBlock Text="Занятие" Grid.Column="2" Grid.Row="1" FontSize="25" FontFamily="Arial" Foreground="White" TextAlignment="Right"/>
-        <ComboBox Name="cb_gender" Grid.Column="3" Grid.Row="1" SelectionChanged="cb_gender_SelectionChanged">
+        <TextBlock Text="Занятие" Grid.Column="2" Grid.Row="1" FontSize="25" FontFamily="Arial" Foreground="White" TextAlignment="Right" VerticalAlignment="Center"/>
+        <ComboBox Name="cb_gender" Grid.Column="3" Grid.Row="1" SelectionChanged="cb_gender_SelectionChanged" Margin="10,30,10,30">
         </ComboBox>
         <Button x:Name="btn_Ok" Content="Выбрать" Grid.Column="3" Grid.ColumnSpan="1" Grid.Row="2" Click="btn_Ok_Click" Margin="46,25,24,29"/>
     </Grid>

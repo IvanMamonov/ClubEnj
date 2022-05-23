@@ -8,6 +8,6 @@ namespace ClubEnj
 {
     internal class bd_connection
     {
-        public static clubpcEntities1 connection = new clubpcEntities1();
+        public static clubpcEntities2 connection = new clubpcEntities2();
     }
 }

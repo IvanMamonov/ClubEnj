@@ -38,7 +38,8 @@ namespace ClubEnj
             a.id_type = i;
             bd_connection.connection.User.Add(a);
             bd_connection.connection.SaveChanges();
-            NavigationService.Navigate(new pcpage());
+            NavigationService.Navigate(new pcpage(a.id_user));
+
         }
 
         public void cb_gender_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -46,6 +47,16 @@ namespace ClubEnj
             var a = (sender as ComboBox).SelectedItem as Type;
             i = a.id_type;
             
+        }
+
+        private void tb_number_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void tb_fi_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }
