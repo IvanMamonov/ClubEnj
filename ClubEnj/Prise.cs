@@ -12,23 +12,19 @@ namespace ClubEnj
     using System;
     using System.Collections.Generic;
     
-    public partial class User
+    public partial class Prise
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public User()
+        public Prise()
         {
-            this.Table = new HashSet<Table>();
+            this.User = new HashSet<User>();
         }
     
-        public int id_user { get; set; }
-        public string FullName { get; set; }
-        public string Number { get; set; }
-        public Nullable<int> id_type { get; set; }
-        public Nullable<int> id_prise { get; set; }
+        public int id_prise { get; set; }
+        public string prise1 { get; set; }
+        public Nullable<int> id_user { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Table> Table { get; set; }
-        public virtual Type Type { get; set; }
-        public virtual Prise Prise { get; set; }
+        public virtual ICollection<User> User { get; set; }
     }
 }

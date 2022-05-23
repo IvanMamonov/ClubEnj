@@ -28,10 +28,6 @@ namespace ClubEnj
             InitializeComponent();
             cb_gender.ItemsSource = bd_connection.connection.Type.ToList();
             cb_gender.DisplayMemberPath = "title";
-            //types = new ObservableCollection<Type>(bd_connection.connection.Type.ToList());
-
-            ////cnb_type.Items.Add(Type.);
-            //this.DataContext = this;
         }
 
         public void btn_Ok_Click(object sender, RoutedEventArgs e)
@@ -50,11 +46,6 @@ namespace ClubEnj
             var a = (sender as ComboBox).SelectedItem as Type;
             i = a.id_type;
             
-        }
-
-        private void tb_fi_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
         }
     }
 }

@@ -31,5 +31,6 @@ namespace ClubEnj
         public virtual DbSet<Table> Table { get; set; }
         public virtual DbSet<Type> Type { get; set; }
         public virtual DbSet<User> User { get; set; }
+        public virtual DbSet<Prise> Prise { get; set; }
     }
 }

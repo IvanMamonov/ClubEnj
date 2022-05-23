@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,6 +21,8 @@ namespace ClubEnj
     /// </summary>
     public partial class pcpage : Page
     {
+        public static ObservableCollection<Prise> prises { get; set; }
+        int y { get; set; }
         public pcpage()
         {
             InitializeComponent();
@@ -36,10 +39,16 @@ namespace ClubEnj
 
         private void btn_choose_Click(object sender, RoutedEventArgs e)
         {
-
+            var b = new Prise();
+            //b.id_prise = ;
         }
 
         private void btn_nigch_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void prise_DataContextChanged(object sender, DependencyPropertyChangedEventArgs e)
         {
 
         }
