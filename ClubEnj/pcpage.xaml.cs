@@ -67,10 +67,5 @@ namespace ClubEnj
         {
             
         }
-
-        private void btn_back_Click(object sender, RoutedEventArgs e)
-        {
-            NavigationService.GoBack();
-        }
     }
 }
