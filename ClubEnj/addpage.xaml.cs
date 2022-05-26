@@ -48,7 +48,7 @@ namespace ClubEnj
             }
             else if (cb_gender.SelectedIndex == 2)
             {
-                NavigationService.Navigate(new pspage(a.id_user));
+                NavigationService.Navigate(new boardgamepage(a.id_user));
             }
         }
 

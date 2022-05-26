@@ -5,10 +5,30 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:ClubEnj"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="450" d:DesignWidth="800" Background="#cc1d00"
       Title="boardgamepage">
 
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Кол-во человек" Grid.Column="0" Grid.Row="1" FontSize="25" FontFamily="Arial" Foreground="White" TextAlignment="Center" VerticalAlignment="Center"/>
+        <TextBox x:Name="tb_kolvoc" Grid.Column="1" Grid.Row="1" Margin="25,30,25,30" TextChanged="tb_kolvoc_TextChanged"/>
+        <TextBlock Text="Кол-во часов" Grid.Column="0" Grid.Row="2" FontSize="25" FontFamily="Arial" Foreground="White" VerticalAlignment="Center" TextAlignment="Center"/>
+        <Button x:Name="btn_nigch" Content="посчитать" Grid.Column="2" Grid.ColumnSpan="1" Grid.Row="2" Click="btn_nigch_Click" Margin="25,25,25,29"/>
+        <TextBlock Text="Цена:" Grid.Column="1" Grid.Row="3" FontSize="25" FontFamily="Arial" Foreground="White" VerticalAlignment="Center" TextAlignment="Left"/>
+        <Label x:Name="prisech" Grid.Row="3" Grid.Column="1" FontSize="25" FontFamily="Arial" Foreground="White" VerticalAlignment="Center" Height="40" HorizontalAlignment="Center" Width="89"></Label>
+        <TextBox x:Name="tb_kolvoch" Grid.Column="1" Grid.Row="2" Margin="25,30,25,30" TextChanged="tb_kolvoch_TextChanged"/>
+        <Button x:Name="btn_add" Content="Добавить" Grid.Column="2" Grid.ColumnSpan="1" Grid.Row="3" Click="btn_add_Click" Margin="25,25,25,29"/>
     </Grid>
 </Page>
