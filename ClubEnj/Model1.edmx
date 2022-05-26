@@ -68,14 +68,6 @@
           <Property Name="FullName" Type="varchar" MaxLength="50" />
           <Property Name="Number" Type="varchar" MaxLength="50" />
         </EntityType>
-        <EntityType Name="UsXTy">
-          <Key>
-            <PropertyRef Name="id_user" />
-            <PropertyRef Name="id_type" />
-          </Key>
-          <Property Name="id_user" Type="int" Nullable="false" />
-          <Property Name="id_type" Type="int" Nullable="false" />
-        </EntityType>
         <Association Name="FK_Prise_User">
           <End Role="User" Type="Self.User" Multiplicity="0..1" />
           <End Role="Prise" Type="Self.Prise" Multiplicity="*" />
@@ -124,30 +116,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_UsXTy_Type">
-          <End Role="Type" Type="Self.Type" Multiplicity="1" />
-          <End Role="UsXTy" Type="Self.UsXTy" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Type">
-              <PropertyRef Name="id_type" />
-            </Principal>
-            <Dependent Role="UsXTy">
-              <PropertyRef Name="id_user" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_UsXTy_User">
-          <End Role="User" Type="Self.User" Multiplicity="1" />
-          <End Role="UsXTy" Type="Self.UsXTy" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="User">
-              <PropertyRef Name="id_user" />
-            </Principal>
-            <Dependent Role="UsXTy">
-              <PropertyRef Name="id_type" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityContainer Name="Хранилище clubpcModelContainer">
           <EntitySet Name="Config" EntityType="Self.Config" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Item" EntityType="Self.Item" Schema="dbo" store:Type="Tables" />
@@ -156,7 +124,6 @@
           <EntitySet Name="Table" EntityType="Self.Table" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Type" EntityType="Self.Type" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="UsXTy" EntityType="Self.UsXTy" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Prise_User" Association="Self.FK_Prise_User">
             <End Role="User" EntitySet="User" />
             <End Role="Prise" EntitySet="Prise" />
@@ -172,14 +139,6 @@
           <AssociationSet Name="FK_Table_User" Association="Self.FK_Table_User">
             <End Role="User" EntitySet="User" />
             <End Role="Table" EntitySet="Table" />
-          </AssociationSet>
-          <AssociationSet Name="FK_UsXTy_Type" Association="Self.FK_UsXTy_Type">
-            <End Role="Type" EntitySet="Type" />
-            <End Role="UsXTy" EntitySet="UsXTy" />
-          </AssociationSet>
-          <AssociationSet Name="FK_UsXTy_User" Association="Self.FK_UsXTy_User">
-            <End Role="User" EntitySet="User" />
-            <End Role="UsXTy" EntitySet="UsXTy" />
           </AssociationSet>
         </EntityContainer>
       </Schema>
@@ -241,7 +200,6 @@
           </Key>
           <Property Name="id_type" Type="Int32" Nullable="false" />
           <Property Name="title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="User" Relationship="Self.UsXTy" FromRole="Type" ToRole="User" />
         </EntityType>
         <EntityType Name="User">
           <Key>
@@ -252,7 +210,6 @@
           <Property Name="Number" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Prise" Relationship="Self.FK_Prise_User" FromRole="User" ToRole="Prise" />
           <NavigationProperty Name="Table" Relationship="Self.FK_Table_User" FromRole="User" ToRole="Table" />
-          <NavigationProperty Name="Type" Relationship="Self.UsXTy" FromRole="User" ToRole="Type" />
         </EntityType>
         <Association Name="FK_Table_Config">
           <End Role="Config" Type="Self.Config" Multiplicity="0..1" />
@@ -302,11 +259,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="UsXTy">
-          <End Role="Type" Type="Self.Type" Multiplicity="*" />
-          <End Role="User" Type="Self.User" Multiplicity="*" />
-        </Association>
-        <EntityContainer Name="clubpcEntities3" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="clubpcEntities4" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Config" EntityType="Self.Config" />
           <EntitySet Name="Item" EntityType="Self.Item" />
           <EntitySet Name="Prise" EntityType="Self.Prise" />
@@ -330,17 +283,13 @@
             <End Role="User" EntitySet="User" />
             <End Role="Table" EntitySet="Table" />
           </AssociationSet>
-          <AssociationSet Name="UsXTy" Association="Self.UsXTy">
-            <End Role="Type" EntitySet="Type" />
-            <End Role="User" EntitySet="User" />
-          </AssociationSet>
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Хранилище clubpcModelContainer" CdmEntityContainer="clubpcEntities3">
+        <EntityContainerMapping StorageEntityContainer="Хранилище clubpcModelContainer" CdmEntityContainer="clubpcEntities4">
           <EntitySetMapping Name="Config">
             <EntityTypeMapping TypeName="clubpcModel.Config">
               <MappingFragment StoreEntitySet="Config">
@@ -405,14 +354,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <AssociationSetMapping Name="UsXTy" TypeName="clubpcModel.UsXTy" StoreEntitySet="UsXTy">
-            <EndProperty Name="Type">
-              <ScalarProperty Name="id_type" ColumnName="id_user" />
-            </EndProperty>
-            <EndProperty Name="User">
-              <ScalarProperty Name="id_user" ColumnName="id_type" />
-            </EndProperty>
-          </AssociationSetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

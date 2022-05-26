@@ -14,14 +14,11 @@ namespace ClubEnj
     
     public partial class User
     {
-        internal int id_type;
-
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public User()
         {
             this.Prise = new HashSet<Prise>();
             this.Table = new HashSet<Table>();
-            this.Type = new HashSet<Type>();
         }
     
         public int id_user { get; set; }
@@ -32,7 +29,5 @@ namespace ClubEnj
         public virtual ICollection<Prise> Prise { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Table> Table { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Type> Type { get; set; }
     }
 }

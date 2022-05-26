@@ -35,7 +35,6 @@ namespace ClubEnj
             var a = new User();
             a.FullName = tb_fi.Text;
             a.Number = tb_number.Text;
-            a.id_type = i;
             bd_connection.connection.User.Add(a);
             bd_connection.connection.SaveChanges();
 

@@ -13,10 +13,10 @@ namespace ClubEnj
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class clubpcEntities3 : DbContext
+    public partial class clubpcEntities4 : DbContext
     {
-        public clubpcEntities3()
-            : base("name=clubpcEntities3")
+        public clubpcEntities4()
+            : base("name=clubpcEntities4")
         {
         }
     

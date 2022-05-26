@@ -4,19 +4,18 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="ee2c308748444316bc2f3ec264ba3f48" Name="Diagram1">
-        <EntityTypeShape EntityType="clubpcModel.Config" Width="1.5" PointX="3" PointY="1.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="clubpcModel.Item" Width="1.5" PointX="3" PointY="7.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="clubpcModel.Prise" Width="1.5" PointX="5.25" PointY="4.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="clubpcModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="7.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="clubpcModel.Table" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="clubpcModel.Type" Width="1.5" PointX="0.75" PointY="4.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="clubpcModel.User" Width="1.5" PointX="3" PointY="4" IsExpanded="true" />
+      <Diagram DiagramId="593dce0f4f364681aa58e3206bf12b60" Name="Diagram1">
+        <EntityTypeShape EntityType="clubpcModel.Config" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="clubpcModel.Item" Width="1.5" PointX="0.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="clubpcModel.Prise" Width="1.5" PointX="3" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="clubpcModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="clubpcModel.Table" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="clubpcModel.Type" Width="1.5" PointX="2.75" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="clubpcModel.User" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
         <AssociationConnector Association="clubpcModel.FK_Table_Config" ManuallyRouted="false" />
         <AssociationConnector Association="clubpcModel.FK_Table_Item" ManuallyRouted="false" />
         <AssociationConnector Association="clubpcModel.FK_Prise_User" ManuallyRouted="false" />
         <AssociationConnector Association="clubpcModel.FK_Table_User" ManuallyRouted="false" />
-        <AssociationConnector Association="clubpcModel.UsXTy" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

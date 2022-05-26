@@ -31,7 +31,7 @@
         <TextBlock Text="Цена:" Grid.Column="3" Grid.Row="2" FontSize="25" FontFamily="Arial" Foreground="White" VerticalAlignment="Center" TextAlignment="Left" Margin="0,0,130,0"/>
         <Label x:Name="prs" Grid.Row="2" Grid.Column="3" FontSize="25" FontFamily="Arial" Foreground="White" VerticalAlignment="Center" Height="40" HorizontalAlignment="Center" Width="89"></Label>
         <TextBlock Text="Ночной тариф" Grid.Column="0" Grid.Row="3" FontSize="25" FontFamily="Arial" Foreground="White" VerticalAlignment="Center" TextAlignment="Center"/>
-        <TextBlock Text="1520р" Grid.Column="1" Grid.Row="3" FontSize="25" FontFamily="Arial" Foreground="White" VerticalAlignment="Center" TextAlignment="Center"/>
+        <TextBlock x:Name="prisepsnght" Text="1200р" Grid.Column="1" Grid.Row="3" FontSize="25" FontFamily="Arial" Foreground="White" VerticalAlignment="Center" TextAlignment="Center"/>
         <Button x:Name="btn_nghtcnt" Content="Выбрать" Grid.Column="1" Grid.ColumnSpan="1" Grid.Row="4" Click="btn_nghtcnt_Click" Margin="25,25,25,29"/>
         <Button x:Name="btn_dcnt" Content="Выбрать" Grid.Column="3" Grid.ColumnSpan="1" Grid.Row="3" Click="btn_dcnt_Click" Margin="25,25,25,29"/>
     </Grid>

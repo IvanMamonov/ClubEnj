@@ -71,7 +71,6 @@
     <Compile Include="Config.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="globalper.cs" />
     <Compile Include="Item.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>

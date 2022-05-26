@@ -14,16 +14,7 @@ namespace ClubEnj
     
     public partial class Type
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Type()
-        {
-            this.User = new HashSet<User>();
-        }
-    
         public int id_type { get; set; }
         public string title { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<User> User { get; set; }
     }
 }
