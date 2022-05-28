@@ -22,6 +22,9 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
+        <Grid.Background>
+            <ImageBrush ImageSource="images/pc.jpg"></ImageBrush>
+        </Grid.Background>
         <TextBlock Text="Выбор приставки" Grid.Column="0" Grid.Row="1" FontSize="25" FontFamily="Arial" Foreground="White" TextAlignment="Center" VerticalAlignment="Center"/>
         <ComboBox Name="cb_ps" Grid.Column="1" Grid.Row="1" SelectionChanged="cb_ps_SelectionChanged" Margin="10,30,10,30">
         </ComboBox>

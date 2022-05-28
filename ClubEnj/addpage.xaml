@@ -22,7 +22,9 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-
+        <Grid.Background>
+            <ImageBrush ImageSource="images/pc.jpg"></ImageBrush>
+        </Grid.Background>
         <TextBlock Text="Фамилия Имя" Grid.Column="0" Grid.Row="0" FontSize="25" FontFamily="Arial" Foreground="White"/>
         <TextBlock Text="Телефон" Grid.Column="0" Grid.Row="1" FontSize="25" FontFamily="Arial" Foreground="White"/>
 

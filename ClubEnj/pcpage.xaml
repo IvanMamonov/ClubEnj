@@ -22,6 +22,9 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
+        <Grid.Background>
+            <ImageBrush ImageSource="images/pc.jpg"></ImageBrush>
+        </Grid.Background>
         <TextBlock Text="Кол-во часов" Grid.Column="0" Grid.Row="0" FontSize="25" FontFamily="Arial" Foreground="White" TextAlignment="Center" VerticalAlignment="Center"/>
         <TextBox x:Name="tb_amount" Grid.Column="1" Grid.Row="0" Margin="25,30,25,30" TextChanged="tb_amount_TextChanged"/>
         <Button x:Name="btn_count" Content="посчитать" Grid.Column="2" Grid.ColumnSpan="1" Grid.Row="0" Click="btn_count_Click" Margin="25,25,25,29"/>

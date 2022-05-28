@@ -22,6 +22,9 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
+        <Grid.Background>
+            <ImageBrush ImageSource="images/pc.jpg"></ImageBrush>
+        </Grid.Background>
         <TextBlock Text="Кол-во человек" Grid.Column="0" Grid.Row="1" FontSize="25" FontFamily="Arial" Foreground="White" TextAlignment="Center" VerticalAlignment="Center"/>
         <TextBox x:Name="tb_kolvoc" Grid.Column="1" Grid.Row="1" Margin="25,30,25,30" TextChanged="tb_kolvoc_TextChanged"/>
         <TextBlock Text="Кол-во часов" Grid.Column="0" Grid.Row="2" FontSize="25" FontFamily="Arial" Foreground="White" VerticalAlignment="Center" TextAlignment="Center"/>
