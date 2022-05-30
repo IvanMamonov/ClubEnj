@@ -7,23 +7,14 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ClubEnj
+namespace club
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Config
+    public partial class TypeGame
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Config()
-        {
-            this.Table = new HashSet<Table>();
-        }
-    
-        public int id_config { get; set; }
-        public byte[] Fail { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Table> Table { get; set; }
+        public int id_type { get; set; }
+        public string title { get; set; }
     }
 }

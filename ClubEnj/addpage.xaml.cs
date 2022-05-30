@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using club;
 
 namespace ClubEnj
 {
@@ -21,12 +22,12 @@ namespace ClubEnj
     /// </summary>
     public partial class addpage : Page
     {
-        public static ObservableCollection<Type> types { get; set; }
+        public static ObservableCollection<TypeGame> types { get; set; }
         int i { get; set; }
         public addpage()
         {
             InitializeComponent();
-            cb_gender.ItemsSource = bd_connection.connection.Type.ToList();
+            cb_gender.ItemsSource = bd_connection.connection.TypeGame.ToList();
             cb_gender.DisplayMemberPath = "title";
         }
 
@@ -35,8 +36,8 @@ namespace ClubEnj
             var a = new User();
             a.FullName = tb_fi.Text;
             a.Number = tb_number.Text;
-            bd_connection.connection.User.Add(a);
-            bd_connection.connection.SaveChanges();
+            Class1.AddUser(a);
+
 
             if (cb_gender.SelectedIndex == 0) 
             {
@@ -54,7 +55,7 @@ namespace ClubEnj
 
         public void cb_gender_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            var a = (sender as ComboBox).SelectedItem as Type;
+            var a = (sender as ComboBox).SelectedItem as TypeGame;
             i = a.id_type;
             
         }

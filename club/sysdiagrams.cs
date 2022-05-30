@@ -7,17 +7,17 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ClubEnj
+namespace club
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Prise
+    public partial class sysdiagrams
     {
-        public int id_prise { get; set; }
-        public string prise1 { get; set; }
-        public Nullable<int> id_user { get; set; }
-    
-        public virtual User User { get; set; }
+        public string name { get; set; }
+        public int principal_id { get; set; }
+        public int diagram_id { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

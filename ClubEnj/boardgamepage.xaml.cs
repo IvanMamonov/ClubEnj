@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Collections.ObjectModel;
+using club;
 
 
 namespace ClubEnj
@@ -37,7 +38,12 @@ namespace ClubEnj
 
         private void btn_add_Click(object sender, RoutedEventArgs e)
         {
-
+            var c = new Prise();
+            c.prise1 = prisech.Content.ToString();
+            c.id_user = new_id_user;
+            MessageBox.Show("Запись сделана");
+            Class1.AddPriseBoard(c);
+            NavigationService.Navigate(new addpage());
         }
 
         private void btn_nigch_Click(object sender, RoutedEventArgs e)
@@ -50,13 +56,7 @@ namespace ClubEnj
 
         private void tb_kolvoc_TextChanged(object sender, TextChangedEventArgs e)
         {
-            var c = new Prise();
-            c.prise1 = prisech.Content.ToString();
-            c.id_user = new_id_user;
-            MessageBox.Show("Запись сделана");
-            bd_connection.connection.Prise.Add(c);
-            bd_connection.connection.SaveChanges();
-            NavigationService.Navigate(new addpage());
+            
         }
     }
 }

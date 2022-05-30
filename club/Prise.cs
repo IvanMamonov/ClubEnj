@@ -7,21 +7,17 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ClubEnj
+namespace club
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Table
+    public partial class Prise
     {
-        public int id_table { get; set; }
-        public Nullable<int> id_item { get; set; }
+        public int id_prise { get; set; }
+        public string prise1 { get; set; }
         public Nullable<int> id_user { get; set; }
-        public Nullable<int> id_config { get; set; }
-        public Nullable<int> spaciousness { get; set; }
     
-        public virtual Config Config { get; set; }
-        public virtual Item Item { get; set; }
         public virtual User User { get; set; }
     }
 }

@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using club;
 
 namespace ClubEnj
 {
@@ -58,8 +59,7 @@ namespace ClubEnj
             v.prise1 = prisenght.Text.ToString();
             v.id_user = new_id_user;
             MessageBox.Show("Запись сделана");
-            bd_connection.connection.Prise.Add(v);
-            bd_connection.connection.SaveChanges();
+            Class1.AddPrisePc(v);
             NavigationService.Navigate(new addpage());
         }
         

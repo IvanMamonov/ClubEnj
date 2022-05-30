@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using club;
 
-namespace ClubEnj
+namespace club
 {
-    internal class bd_connection
+    public class bd_connection
     {
-        public static clubpcEntities4 connection = new clubpcEntities4();
+        public static clubpcEntities3 connection = new clubpcEntities3();
     }
 }

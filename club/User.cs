@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ClubEnj
+namespace club
 {
     using System;
     using System.Collections.Generic;
@@ -18,7 +18,6 @@ namespace ClubEnj
         public User()
         {
             this.Prise = new HashSet<Prise>();
-            this.Table = new HashSet<Table>();
         }
     
         public int id_user { get; set; }
@@ -27,7 +26,5 @@ namespace ClubEnj
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Prise> Prise { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Table> Table { get; set; }
     }
 }
