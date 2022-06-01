@@ -12,8 +12,22 @@ namespace club
         public static ObservableCollection<TypeGame> types { get; set; }
         int i { get; set; }
         public static ObservableCollection<Prise> prises { get; set; }
+        public static List<User> GetUser()
+        {
+            List<User> users = new List<User>(bd_connection.connection.User);
+            List<User> users1 = new List<User>();
+            return users;
+        }
         
-        public static bool AddUser(User user)
+        public static User GetUser(string FullName, string Number)
+        {
+            ObservableCollection<User> users = new ObservableCollection<User>(bd_connection.connection.User);
+            var currentUser = users.Where(u => u.FullName == FullName && u.Number == Number).FirstOrDefault();
+            return currentUser;
+        }
+
+
+        public static bool AddUsers(User user)
         {
             try
             {

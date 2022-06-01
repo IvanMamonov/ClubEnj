@@ -22,10 +22,10 @@ namespace ConsoleApp
                 Console.WriteLine("[+] Введите номер телефона:");
                 string userNumber = Console.ReadLine();
             }
-            if (userName != null && userNumber != null)
-            {
-                User user = new User();
-            }
+            //if (userName != null && userNumber != null)
+            //{
+            //    //User user = new User();
+            //}
         }
     }
 }

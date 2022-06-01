@@ -36,7 +36,7 @@ namespace ClubEnj
             var a = new User();
             a.FullName = tb_fi.Text;
             a.Number = tb_number.Text;
-            Class1.AddUser(a);
+            Class1.AddUsers(a);
 
 
             if (cb_gender.SelectedIndex == 0) 
